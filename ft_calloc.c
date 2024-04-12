@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 18:22:06 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/11 14:50:23 by mpjevic          ###   ########.fr       */
+/*   Created: 2024/04/11 16:02:17 by mpjevic           #+#    #+#             */
+/*   Updated: 2024/04/11 16:23:39 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	srclen;
-<<<<<<< HEAD
-	
-	//srclen = ft_strlen(src);
-	while (src[srclen])
-		srclen++;
+	void	*ptr;
+	size_t	total_size;
 
-=======
-
-	srclen = ft_strlen(src);
->>>>>>> bc0de5a (1st mandatory - 0)
-	if (src == NULL || dst == NULL)
-		return (0);
-	if (size == 0)
-		return (0);
-	while (*src && size--)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (srclen);
+	total_size = nmemb * size;
+	ptr = malloc(total_size);
+	if (ptr != NULL)
+		ft_bzero(ptr, total_size);
+	return (ptr);
 }

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 18:22:06 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/11 14:50:23 by mpjevic          ###   ########.fr       */
+/*   Created: 2024/04/11 14:09:42 by mpjevic           #+#    #+#             */
+/*   Updated: 2024/04/11 14:48:31 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	srclen;
-<<<<<<< HEAD
-	
-	//srclen = ft_strlen(src);
-	while (src[srclen])
-		srclen++;
+	size_t	len_little;
 
-=======
-
-	srclen = ft_strlen(src);
->>>>>>> bc0de5a (1st mandatory - 0)
-	if (src == NULL || dst == NULL)
-		return (0);
-	if (size == 0)
-		return (0);
-	while (*src && size--)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (srclen);
+	if (*little == '\0')
+		return ((char *)big);
+	len_little = ft_strlen(little);
+	while (*big != '\0' && len >= len_little)
+	{
+		if (*big == *little && ft_memcmp(big, little, len_little) == 0)
+			return ((char *)big);
+		big++;
+		len--;
+	}
+	return (NULL);
 }
