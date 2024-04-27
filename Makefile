@@ -6,12 +6,12 @@
 #    By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 18:08:09 by mpjevic           #+#    #+#              #
-#    Updated: 2024/04/27 16:14:22 by homefolder       ###   ########.fr        #
+#    Updated: 2024/04/27 22:55:28 by homefolder       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libft.a
-B_NAME =	libft.a
+B_NAME =	libft_bonus.a
 HEADER =	libft.h
 
 SRCS = 		ft_atoi.c \
@@ -65,12 +65,18 @@ B_OBJS = 	$(B_SRC:.c=.o)
 
 CC = 		cc
 CFLAGS = 	-Wall -Wextra -Werror
+AR =		ar rcs
 RM = 		rm -f
 
-all: 		$(NAME)
+all:		$(NAME)
 
-$(NAME): 	$(OBJS) $(HEADER)
-			ar rcs $(NAME) $(OBJS)
+bonus:		$(B_NAME)
+
+$(NAME):	$(OBJS) $(HEADER)
+			$(AR) $(NAME) $(OBJS)
+
+$(B_NAME):	$(B_OBJS) $(HEADER)
+			$(AR) $(B_NAME) $(B_OBJS)
 
 clean:		
 			$(RM) $(OBJS) $(B_OBJS)
@@ -79,14 +85,6 @@ fclean:		clean
 			$(RM) $(NAME) $(B_NAME) 
 
 re: 		fclean all
-
-bonus: 		$(B_NAME)
-
-$(B_NAME):	$(OBJS) $(B_OBJS) $(HEADER)
-			ar rcs $(B_NAME) $(OBJS) $(B_OBJS)
-
-$(B_OBJS):	$(SRCS) $(HEADER)
-		$(CC) $(CFLAGS) -c $(@:.o=.c) -o $@
 
 .PHONY: 	all clean fclean re bonus
 

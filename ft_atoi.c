@@ -6,36 +6,30 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:36:08 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/12 14:30:08 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/28 00:00:13 by homefolder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
-	int			sign;
-	int long	result;
+	int		sign;
+	long	result;
 
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n'
-		|| *nptr == '\r' || *nptr == '\v' || *nptr == '\f')
-		nptr++;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\r' || *str == '\v' || *str == '\f')
+		str++;
 	sign = 1;
-	if (*nptr == '-' || *nptr == '+')
+	if (*str == '-' || *str == '+')
 	{
-		if (*nptr == '-')
+		if (*str == '-')
 			sign = -sign;
-		nptr++;
+		str++;
 	}
 	result = 0;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		result = result * 10 + (*nptr - '0');
-		if (sign == 1 && result > INT_MAX)
-			return (0);
-		if (sign == -1 && (-result) < INT_MIN)
-			return (-1);
-		nptr++;
-	}
-	return (result * sign);
+	while (*str >= '0' && *str <= '9')
+		result = result * 10 + (*str++ - '0');
+	result = result * sign;
+	return ((int)result);
 }
