@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 23:41:44 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/16 19:05:46 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/27 14:24:41 by homefolder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	s += start;
 	str_ptr = str;
-	*(str + len) = '\0';
 	while (len-- && *s)
 		*str++ = *s++;
+	*str = '\0';
 	return (str_ptr);
 }
