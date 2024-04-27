@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.vienna42.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:26:46 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/05 11:05:19 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/28 00:53:01 by homefolder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }
