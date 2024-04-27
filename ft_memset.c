@@ -24,17 +24,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-int	main()
-{
-	char string[] = "string";
-	
-	printf("%s\n", string);
-	printf("%s\n", ft_memset(string, 'a', 6));
-	printf("%p\n", ft_memset(string, 'a', 6));
-	printf("%s\n", ft_memset(string, 'a', sizeof(string) - 1));
-	printf("%p\n", &string);
-
-	return (0);
-}
-*/

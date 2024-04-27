@@ -1,50 +1,86 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/19 18:08:09 by mpjevic           #+#    #+#              #
+#    Updated: 2024/04/21 12:24:29 by mpjevic          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = libft.a
+NAME = 		libft.a
 
-SRCS = ft_atoi.c \
-ft_bzero.c \
-ft_calloc.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isprint.c \
-ft_memchr.c \
-ft_memcmp.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c \
-ft_strchr.c \
-<<<<<<< HEAD
-=======
-ft_strdup.c \
-ft_strlcat.c \
->>>>>>> bc0de5a (1st mandatory - 0)
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strncmp.c \
-ft_strnstr.c \
-ft_strrchr.c \
-ft_tolower.c \
-ft_toupper.c 
+SRCS = 		ft_atoi.c \
+			ft_bzero.c \
+			ft_calloc.c \
+			ft_isalnum.c \
+			ft_isalpha.c \
+			ft_isascii.c \
+			ft_isdigit.c \
+			ft_isprint.c \
+			ft_itoa.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_memcpy.c \
+			ft_memmove.c \
+			ft_memset.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_split.c \
+			ft_strchr.c \
+			ft_strdup.c \
+			ft_striteri.c \
+			ft_strjoin.c \
+			ft_strlcat.c \
+			ft_strlcpy.c \
+			ft_strlen.c \
+			ft_strmapi.c \
+			ft_strncmp.c \
+			ft_strnstr.c \
+			ft_strrchr.c \
+			ft_strtrim.c \
+			ft_substr.c \
+			ft_tolower.c \
+			ft_toupper.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS = 		$(SRCS:.c=.o)
 
-CC = gcc
+B_SRC = 	ft_lstadd_back_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstmap_bonus.c \
+			ft_lstnew_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstsize_bonus.c
 
-CFLAGS = -Wall -Wextra -Werror
+B_OBJS = 	$(B_SRC:.c=.o)
 
-all: $(NAME)
+CC = 		cc
 
-$(NAME): $(OBJS)
-	ar rcs $@ $^
+CFLAGS = 	-Wall -Wextra -Werror
 
-clean: 
-	rm -f $(OBJS)
+RM = 		rm -f
 
-fclean: clean
-	rm -f $(NAME)
+all: 		$(NAME)
 
-re: fclean all
+$(NAME): 	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
-.PHONY: all clean fclean re
+clean:		
+			$(RM) $(OBJS) $(B_OBJS)
+
+fclean:		clean
+			$(RM) $(NAME) 
+
+re: 		fclean all
+
+bonus: 		$(OBJS) $(B_OBJS)
+			ar rcs $(NAME) $(OBJS) $(B_OBJS)
+
+.PHONY: 	all clean fclean re bonus

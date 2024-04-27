@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:36:08 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/11 15:56:51 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/12 14:30:08 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	ft_atoi(const char *nptr)
 	int			sign;
 	int long	result;
 
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\r')
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n'
+		|| *nptr == '\r' || *nptr == '\v' || *nptr == '\f')
 		nptr++;
 	sign = 1;
 	if (*nptr == '-' || *nptr == '+')

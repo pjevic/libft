@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 14:17:20 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/07 16:18:43 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/16 19:58:47 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if (*s == (char)c)
 		return ((char *)s);
-	return (NULL);
+	else
+		return (NULL);
 }

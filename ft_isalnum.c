@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpjevic <mpjevic@student.vienna42.com      +#+  +:+       +#+        */
+/*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:08:28 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/05 11:02:52 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/04/26 14:01:40 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*
-int	main()
-{
-	printf("%i\n", ft_isalnum('a'));
-	printf("%i\n", ft_isalnum('A'));
-	printf("%i\n", ft_isalnum('0'));
-	printf("%i\n", ft_isalnum('\t'));
-	printf("%i\n", ft_isalnum(' '));
-}
-*/
