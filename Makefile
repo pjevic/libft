@@ -6,12 +6,12 @@
 #    By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 18:08:09 by mpjevic           #+#    #+#              #
-#    Updated: 2024/04/27 14:46:53 by homefolder       ###   ########.fr        #
+#    Updated: 2024/04/27 16:14:22 by homefolder       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libft.a
-B_NAME =	libft_bonus.a
+B_NAME =	libft.a
 HEADER =	libft.h
 
 SRCS = 		ft_atoi.c \
@@ -76,7 +76,7 @@ clean:
 			$(RM) $(OBJS) $(B_OBJS)
 
 fclean:		clean
-			$(RM) $(NAME) 
+			$(RM) $(NAME) $(B_NAME) 
 
 re: 		fclean all
 
