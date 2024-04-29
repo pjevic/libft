@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:02:17 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/28 00:19:43 by homefolder       ###   ########.fr       */
+/*   Updated: 2024/04/28 01:25:16 by homefolder       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count > 0 && size > SIZE_MAX / count)
 		return (NULL);
+	total_size = count * size;
 	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
-	total_size = count * size;
 	ft_bzero(ptr, total_size);
 	return (ptr);
 }
