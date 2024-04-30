@@ -6,12 +6,11 @@
 #    By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 18:08:09 by mpjevic           #+#    #+#              #
-#    Updated: 2024/04/27 22:55:28 by homefolder       ###   ########.fr        #
+#    Updated: 2024/04/30 17:21:45 by mpjevic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libft.a
-B_NAME =	libft_bonus.a
 HEADER =	libft.h
 
 SRCS = 		ft_atoi.c \
@@ -70,13 +69,11 @@ RM = 		rm -f
 
 all:		$(NAME)
 
-bonus:		$(B_NAME)
-
 $(NAME):	$(OBJS) $(HEADER)
 			$(AR) $(NAME) $(OBJS)
 
-$(B_NAME):	$(B_OBJS) $(HEADER)
-			$(AR) $(B_NAME) $(B_OBJS)
+bonus:		$(B_OBJS) $(HEADER)
+			$(AR) $(NAME) $(B_OBJS)
 
 clean:		
 			$(RM) $(OBJS) $(B_OBJS)
