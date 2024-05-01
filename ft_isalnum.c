@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:08:28 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/28 00:50:24 by homefolder       ###   ########.fr       */
+/*   Updated: 2024/04/26 14:01:40 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

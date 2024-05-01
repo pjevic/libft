@@ -3,31 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpjevic <mpjevic@student.vienna42.com      +#+  +:+       +#+        */
+/*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 17:17:35 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/30 17:17:48 by mpjevic          ###   ########.fr       */
+/*   Created: 2024/04/11 14:09:42 by mpjevic           #+#    #+#             */
+/*   Updated: 2024/04/11 14:48:31 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	len_hay;
-	size_t	len_ndl;
+	size_t	len_little;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
-	len_hay = ft_strlen(haystack);
-	len_ndl = ft_strlen(needle);
-	if (len_ndl > len || len_ndl > len_hay)
-		return (NULL);
-	while (*haystack && len >= len_ndl)
+	if (*little == '\0')
+		return ((char *)big);
+	len_little = ft_strlen(little);
+	while (*big != '\0' && len >= len_little)
 	{
-		if (ft_memcmp(haystack, needle, len_ndl) == 0)
-			return ((char *)haystack);
-		haystack++;
+		if (*big == *little && ft_memcmp(big, little, len_little) == 0)
+			return ((char *)big);
+		big++;
 		len--;
 	}
 	return (NULL);

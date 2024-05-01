@@ -6,12 +6,11 @@
 #    By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 18:08:09 by mpjevic           #+#    #+#              #
-#    Updated: 2024/04/30 17:21:45 by mpjevic          ###   ########.fr        #
+#    Updated: 2024/04/21 12:24:29 by mpjevic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libft.a
-HEADER =	libft.h
 
 SRCS = 		ft_atoi.c \
 			ft_bzero.c \
@@ -63,25 +62,25 @@ B_SRC = 	ft_lstadd_back_bonus.c \
 B_OBJS = 	$(B_SRC:.c=.o)
 
 CC = 		cc
+
 CFLAGS = 	-Wall -Wextra -Werror
-AR =		ar rcs
+
 RM = 		rm -f
 
-all:		$(NAME)
+all: 		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADER)
-			$(AR) $(NAME) $(OBJS)
-
-bonus:		$(B_OBJS) $(HEADER)
-			$(AR) $(NAME) $(B_OBJS)
+$(NAME): 	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean:		
 			$(RM) $(OBJS) $(B_OBJS)
 
 fclean:		clean
-			$(RM) $(NAME) $(B_NAME) 
+			$(RM) $(NAME) 
 
 re: 		fclean all
 
-.PHONY: 	all clean fclean re bonus
+bonus: 		$(OBJS) $(B_OBJS)
+			ar rcs $(NAME) $(OBJS) $(B_OBJS)
 
+.PHONY: 	all clean fclean re bonus

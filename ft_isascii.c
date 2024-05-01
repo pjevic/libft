@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.vienna42.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:03:24 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/28 00:52:17 by homefolder       ###   ########.fr       */
+/*   Updated: 2024/04/05 11:04:23 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

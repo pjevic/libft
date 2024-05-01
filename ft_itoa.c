@@ -6,7 +6,7 @@
 /*   By: mpjevic <mpjevic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:53:42 by mpjevic           #+#    #+#             */
-/*   Updated: 2024/04/17 23:16:44 by mpjevic          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:29:25 by mpjevic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static int	nbr_len(int nbr)
 
 static long long	abs_val(long long n)
 {
-	long long	nb;
+	long long	nbr;
 
-	nb = 1;
+	nbr = 1;
 	if (n < 0)
-		nb *= -n;
+		nbr *= -n;
 	else
-		nb *= n;
-	return (nb);
+		nbr *= n;
+	return (nbr);
 }
 
 char	*ft_itoa(int n)
@@ -44,23 +44,23 @@ char	*ft_itoa(int n)
 	unsigned int	nbr;
 	int				sign;
 	int				len;
-	char			*str;
+	char			*a;
 
 	sign = 0;
 	if (n < 0)
 		sign = 1;
 	len = nbr_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	a = (char *)malloc(sizeof(char) * (len + 1));
+	if (!a)
 		return (NULL);
-	*(str + len) = '\0';
+	*(a + len) = '\0';
 	nbr = abs_val(n);
 	while (len--)
 	{
-		*(str + len) = 48 + nbr % 10;
+		*(a + len) = '0' + (nbr % 10);
 		nbr /= 10;
 	}
 	if (sign)
-		*(str) = 45;
-	return (str);
+		*(a) = 45;
+	return (a);
 }
